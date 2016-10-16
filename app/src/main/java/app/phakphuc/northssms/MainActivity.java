@@ -148,9 +148,14 @@ public class MainActivity extends AppCompatActivity {
                 tbsitedata = mDBHelper.Get_SiteData(edit_site.getText().toString());
                 if (tbsitedata != null) {
                       var = "Site : " + tbsitedata.getSite() +
+                            "\nChain : " + tbsitedata.getChain()+
+                            "\nPort : " + tbsitedata.getPort()+
+                              "\n-----------------------------"+
                             "\nIP : " + tbsitedata.getIP()+
+                            "\nGateway : " + tbsitedata.getGateway()+
+                              "\n-----------------------------"+
                             "\nBrand : " + tbsitedata.getBrand()+
-                            "\nZone : " + tbsitedata.getZone();
+                            "\nZone : " + tbsitedata.getMC() + " ("+ tbsitedata.getProvince() +")";
                 } else {    var = "No Data";    }
                 MyDialog alert = new MyDialog();
                 alert.myDialog(MainActivity.this,"SSMS Data" , var);

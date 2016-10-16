@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "ssms_database.db";
+    public static final String DB_NAME = "north_database.db";
     public static final String DB_NAME2 = "s1.db";
     public static final String DB_VERSION = "1";
     public static final String DB_LOCATION = "/data/data/app.phakphuc.northssms/databases/";
@@ -57,7 +57,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Toast.makeText(mContext, sql, Toast.LENGTH_LONG).show();
         Cursor cursor = mDatabase.rawQuery(sql, null);
         if (cursor != null && cursor.moveToFirst()) {
-            TableSiteData cont = new TableSiteData(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            TableSiteData cont = new TableSiteData(cursor.getInt(0), cursor.getString(1),
+                    cursor.getString(2), cursor.getString(3), cursor.getString(4),
+                    cursor.getString(5), cursor.getString(6), cursor.getString(7),
+                    cursor.getString(8));
             // return contact
             cursor.close();
             closeDatabase();
